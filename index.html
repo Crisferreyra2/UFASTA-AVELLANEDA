@@ -160,6 +160,8 @@ nav a:hover{color:#fff;background:var(--glass)}
 .tipo-lic{background:rgba(196,160,200,0.18);color:#d4b0d8}
 .tipo-grado{background:rgba(100,160,255,0.13);color:#90b8ff}
 .tipo-prof{background:rgba(255,180,100,0.13);color:#ffb464}
+.tipo-pos{background:rgba(255,100,180,0.13);color:#ff80c8}
+.tipo-rel{background:rgba(180,120,255,0.13);color:#c090ff}
 .car-nombre{font-size:0.84rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:0.28rem}
 .car-fac{font-size:0.62rem;color:var(--muted);font-weight:500}
 .car-online{display:inline-flex;align-items:center;gap:4px;font-size:0.57rem;font-weight:700;letter-spacing:0.8px;color:#b5d334;margin-top:0.42rem}
@@ -264,7 +266,7 @@ footer{border-top:1px solid var(--glass-b);padding:1.8rem 1.5rem 1.4rem}
 .hamburger span{width:22px;height:2px;background:#fff;border-radius:2px}
 
 /* FAC BIG BUTTONS */
-.fac-btn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.85rem;margin-top:1rem}
+.fac-btn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem;margin-top:1rem}
 .fac-big-btn{
   display:flex;flex-direction:column;align-items:center;gap:0.4rem;
   padding:1.3rem 0.8rem;border-radius:16px;cursor:pointer;
@@ -345,7 +347,7 @@ footer{border-top:1px solid var(--glass-b);padding:1.8rem 1.5rem 1.4rem}
 .modal-cta-text strong{color:#fff;display:block;margin-bottom:2px}
 
 @media(max-width:680px){
-  .fac-btn-grid{grid-template-columns:repeat(2,1fr)}
+  .fac-btn-grid{grid-template-columns:repeat(2,1fr);}
   .modal-grid{grid-template-columns:1fr}
 }
 @media(max-width:400px){
@@ -434,16 +436,17 @@ footer{border-top:1px solid var(--glass-b);padding:1.8rem 1.5rem 1.4rem}
   <div class="reveal" style="text-align:center;padding:1rem 0 0.5rem">
     <span class="stag" style="justify-content:center">Oferta academica</span>
     <div class="stitle" style="display:block;margin:0.6rem 0 0.5rem;font-size:clamp(1.5rem,2.8vw,2.2rem)">Carreras <em>online 2026</em></div>
-    <p style="font-size:0.85rem;color:var(--muted);max-width:520px;margin:0 auto 1.8rem;line-height:1.65">Mas de 30 carreras universitarias 100% virtuales, organizadas por area. Hace click en el area que te interesa para ver la oferta completa.</p>
+    <p style="font-size:0.85rem;color:var(--muted);max-width:520px;margin:0 auto 1.8rem;line-height:1.65">Mas de 35 carreras universitarias 100% virtuales, organizadas por area. Hace click en el area que te interesa para ver la oferta completa.</p>
     <div class="fac-btn-grid">
-      <button class="fac-big-btn" onclick="openModal('all')"><span class="fbb-icon">🎓</span><span class="fbb-label">Ver todas</span><span class="fbb-count">30+</span></button>
+      <button class="fac-big-btn" onclick="openModal('all')"><span class="fbb-icon">🎓</span><span class="fbb-label">Ver todas</span><span class="fbb-count">35+</span></button>
       <button class="fac-big-btn" onclick="openModal('eco')"><span class="fbb-icon">📊</span><span class="fbb-label">Cs. Economicas</span><span class="fbb-count">8</span></button>
       <button class="fac-big-btn" onclick="openModal('edu')"><span class="fbb-icon">📚</span><span class="fbb-label">Cs. Educacion</span><span class="fbb-count">6</span></button>
       <button class="fac-big-btn" onclick="openModal('jur')"><span class="fbb-icon">⚖️</span><span class="fbb-label">Cs. Juridicas</span><span class="fbb-count">6</span></button>
-      <button class="fac-big-btn" onclick="openModal('ing')"><span class="fbb-icon">⚙️</span><span class="fbb-label">Ingenieria</span><span class="fbb-count">2</span></button>
-      <button class="fac-big-btn" onclick="openModal('com')"><span class="fbb-icon">📡</span><span class="fbb-label">Comunicacion</span><span class="fbb-count">2</span></button>
+      <button class="fac-big-btn" onclick="openModal('ing')"><span class="fbb-icon">⚙️</span><span class="fbb-label">Ingenieria</span><span class="fbb-count">4</span></button>
+      <button class="fac-big-btn" onclick="openModal('com')"><span class="fbb-icon">📡</span><span class="fbb-label">Comunicacion</span><span class="fbb-count">5</span></button>
       <button class="fac-big-btn" onclick="openModal('hos')"><span class="fbb-icon">🏨</span><span class="fbb-label">Hospitalidad</span><span class="fbb-count">3</span></button>
       <button class="fac-big-btn" onclick="openModal('med')"><span class="fbb-icon">💊</span><span class="fbb-label">Cs. Medicas</span><span class="fbb-count">1</span></button>
+      <button class="fac-big-btn" onclick="openModal('rel')"><span class="fbb-icon">✝️</span><span class="fbb-label">Ed. Religiosa</span><span class="fbb-count">2</span></button>
     </div>
   </div>
   <div class="carreras-grid" id="carr-grid" style="display:none">
@@ -620,6 +623,7 @@ footer{border-top:1px solid var(--glass-b);padding:1.8rem 1.5rem 1.4rem}
       <button class="modal-tab" onclick="modalFilter('com',this)">Comunicacion</button>
       <button class="modal-tab" onclick="modalFilter('hos',this)">Hospitalidad</button>
       <button class="modal-tab" onclick="modalFilter('med',this)">Cs. Medicas</button>
+      <button class="modal-tab" onclick="modalFilter('rel',this)">Ed. Religiosa</button>
     </div>
     <div class="modal-body">
       <div class="modal-grid" id="modalGrid"></div>
@@ -768,37 +772,52 @@ function handleForm(btn){
 
 // ── MODAL CARRERAS ──
 const CARRERAS = [
-  {fac:'eco',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Administracion de PYMES',area:'Cs. Economicas'},
+  // CS. ECONOMICAS
+  {fac:'eco',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Contador Publico',area:'Cs. Economicas'},
+  {fac:'eco',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Lic. en Recursos Humanos',area:'Cs. Economicas'},
+  {fac:'eco',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Administracion de Pymes',area:'Cs. Economicas'},
+  {fac:'eco',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Turismo',area:'Cs. Economicas'},
   {fac:'eco',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Marketing',area:'Cs. Economicas'},
   {fac:'eco',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Administracion de Empresas',area:'Cs. Economicas'},
   {fac:'eco',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Gestion del Talento Humano',area:'Cs. Economicas'},
-  {fac:'eco',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Turismo',area:'Cs. Economicas'},
   {fac:'eco',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Desarrollo de Negocios Digitales',area:'Cs. Economicas'},
-  {fac:'eco',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Contador Publico',area:'Cs. Economicas'},
-  {fac:'eco',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Licenciatura en Recursos Humanos',area:'Cs. Economicas'},
-  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Educacion',area:'Cs. de la Educacion'},
-  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Educacion Fisica',area:'Cs. de la Educacion'},
-  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Ingles',area:'Cs. de la Educacion'},
-  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Tecnologia Educativa',area:'Cs. de la Educacion'},
-  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Psicopedagogia',area:'Cs. de la Educacion'},
-  {fac:'edu',tipo:'tipo-prof',tipoLabel:'Profesorado',nombre:'Prof. Universitario Nivel Secundario y Superior',area:'Cs. de la Educacion'},
-  {fac:'jur',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Abogacia',area:'Cs. Juridicas y Sociales'},
-  {fac:'jur',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Martillero y Corredor Publico',area:'Cs. Juridicas y Sociales'},
-  {fac:'jur',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Archivologia',area:'Cs. Juridicas y Sociales'},
-  {fac:'jur',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Seguridad Ciudadana',area:'Cs. Juridicas y Sociales'},
-  {fac:'jur',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. en Seguridad Ciudadana',area:'Cs. Juridicas y Sociales'},
-  {fac:'jur',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Corretaje Inmobiliario',area:'Cs. Juridicas y Sociales'},
+  // INGENIERIA
   {fac:'ing',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. en Higiene y Seguridad en el Trabajo',area:'Ingenieria'},
+  {fac:'ing',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Lic. en Ciberseguridad',area:'Ingenieria'},
   {fac:'ing',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Higiene y Seguridad en el Trabajo',area:'Ingenieria'},
+  {fac:'ing',tipo:'tipo-pos',tipoLabel:'Posgrado',nombre:'Esp. en Informatica Forense',area:'Ingenieria'},
+  // COMUNICACION
+  {fac:'com',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Lic. en Comunicacion Social',area:'Periodismo y Comunicacion'},
   {fac:'com',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Periodismo',area:'Periodismo y Comunicacion'},
   {fac:'com',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Diseno y Comunicacion Transmedia',area:'Periodismo y Comunicacion'},
-  {fac:'med',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Acompanante Terapeutico',area:'Cs. Medicas'},
-  {fac:'hos',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Universitaria en Gastronomia',area:'Hospitalidad'},
-  {fac:'hos',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Universitaria en Hoteleria',area:'Hospitalidad'},
-  {fac:'hos',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Universitaria en Turismo',area:'Hospitalidad'},
+  {fac:'com',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Lic. en Publicidad y Narrativas Digitales',area:'Periodismo y Comunicacion'},
+  {fac:'com',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Lic. en Gestion de la Comunicacion Estrategica',area:'Periodismo y Comunicacion'},
+  // CS. JURIDICAS
+  {fac:'jur',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Martillero y Corredor Publico e Inmobiliario',area:'Cs. Juridicas y Sociales'},
+  {fac:'jur',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Abogacia',area:'Cs. Juridicas y Sociales'},
+  {fac:'jur',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. en Seguridad Ciudadana',area:'Cs. Juridicas y Sociales'},
+  {fac:'jur',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Seguridad Ciudadana',area:'Cs. Juridicas y Sociales'},
+  {fac:'jur',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Archivologia',area:'Cs. Juridicas y Sociales'},
+  {fac:'jur',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Corretaje Inmobiliario',area:'Cs. Juridicas y Sociales'},
+  // CS. EDUCACION
+  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Educacion Fisica',area:'Cs. de la Educacion'},
+  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Ingles',area:'Cs. de la Educacion'},
+  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Educacion',area:'Cs. de la Educacion'},
+  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Psicopedagogia',area:'Cs. de la Educacion'},
+  {fac:'edu',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Tecnologia Educativa',area:'Cs. de la Educacion'},
+  {fac:'edu',tipo:'tipo-pos',tipoLabel:'Posgrado',nombre:'Esp. en Planificacion y Gestion Estrategica en Proyectos Educativos',area:'Cs. de la Educacion'},
+  // HOSPITALIDAD
+  {fac:'hos',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Turismo',area:'Hospitalidad'},
+  {fac:'hos',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Hoteleria',area:'Hospitalidad'},
+  {fac:'hos',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Gastronomia',area:'Hospitalidad'},
+  // CS. MEDICAS
+  {fac:'med',tipo:'tipo-tec',tipoLabel:'Tecnicatura',nombre:'Tec. Univ. en Acompanamiento Terapeutico',area:'Cs. Medicas'},
+  // EDUCACION RELIGIOSA
+  {fac:'rel',tipo:'tipo-lic',tipoLabel:'Ciclo Complementario',nombre:'Lic. en Educacion Religiosa',area:'Educacion Religiosa'},
+  {fac:'rel',tipo:'tipo-grado',tipoLabel:'Grado',nombre:'Lic. en Pedagogia de la Educacion Religiosa',area:'Educacion Religiosa'},
 ];
 
-const FAC_NAMES = {all:'Todas las carreras',eco:'Cs. Economicas',edu:'Cs. de la Educacion',jur:'Cs. Juridicas y Sociales',ing:'Ingenieria',com:'Periodismo y Comunicacion',hos:'Hospitalidad',med:'Cs. Medicas'};
+const FAC_NAMES = {all:'Todas las carreras',eco:'Cs. Economicas',edu:'Cs. de la Educacion',jur:'Cs. Juridicas y Sociales',ing:'Ingenieria',com:'Periodismo y Comunicacion',hos:'Hospitalidad',med:'Cs. Medicas',rel:'Educacion Religiosa'};
 
 function renderModal(fac){
   const grid = document.getElementById('modalGrid');
